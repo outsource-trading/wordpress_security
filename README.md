@@ -7,11 +7,11 @@ wp_secure_nossl.sh - Automatic secure wordpress hosting installator
 
 Actions: 
 
-SSH Setup
-Vesta Control Panel Setup
-Firewall Setup
-Wordpress Download & Unpack
-Nginx Secure Settings
+- SSH Setup
+- Vesta Control Panel Setup
+- Firewall Setup
+- Wordpress Download & Unpack
+- Nginx Secure Settings
 
 Compatible : Digital Ocean Droplet, Centos 7 x64
 
