@@ -5,7 +5,9 @@ wp_secure_nossl.sh - Automatic secure wordpress hosting installator
 - Only for restriction access by IP
 - Without SSL
 
-Attention: Run wp_secure_nossl.sh only on new, clean Droplet
+Attention: 
+
+Run wp_secure_nossl.sh only on new, clean Droplet
 
 Actions: 
 
