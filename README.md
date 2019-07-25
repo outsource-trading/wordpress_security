@@ -27,6 +27,7 @@ Detailed Actions:
 
 - Swap setup 
 - Disable ipv6
+- New system User
 - SSH configuration
 - - /etc/ssh/sshd_config сhanges: 
 - - - Default port change ( from 15000 to 22000 )
