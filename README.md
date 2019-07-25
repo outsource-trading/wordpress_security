@@ -13,9 +13,13 @@ Actions:
 - Wordpress Download & Unpack
 - Nginx Secure Settings
 
-Compatible : Digital Ocean Droplet, Centos 7 x64
+Compatible: 
 
-Minimal Droplet Requirements: 1Gb Memory, 25Gb Disk
+Digital Ocean Droplet, Centos 7 x64
+
+Minimal Droplet Requirements: 
+
+1Gb Memory, 25Gb Disk
 
 Detailed Actions:
 
