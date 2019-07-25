@@ -11,7 +11,7 @@ Run wp_secure_nossl.sh only on new, clean Droplet
 
 Actions: 
 
-- SSH Setup
+- SSH setup
 - Vesta Control Panel setup
 - Firewall setup
 - Wordpress download & unpack
