@@ -21,7 +21,7 @@ Package Included:
 - - Private key generation 
 - - Paraphrase setup
 - Vesta Control Panel Setup ( Download latest )
-- PHP 5.6 - > PHP 7.2 Update
+- PHP 5.6 - > PHP 7.2 Upgrade
 - Wordpress Download & Unpack to domain directory
 - Nginx configuration files security settings
 - - move domain.nginx.conf to /etc/nginx/conf.d/
