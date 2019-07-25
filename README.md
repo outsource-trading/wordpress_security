@@ -1,4 +1,4 @@
-# Wordpress Security Hosting
+# Wordpress Security
 
 wp_secure_nossl.sh - Automatic secure wordpress hosting installator 
 
@@ -15,7 +15,7 @@ Attention:
 
 Run wp_secure_nossl.sh only on new, clean Droplet
 
-Actions: 
+Outline: 
 
 - SSH setup
 - Vesta Control Panel setup
@@ -23,7 +23,7 @@ Actions:
 - Wordpress download & unpack
 - Nginx secure settings
 
-Detailed Actions:
+Detailed:
 
 - Swap setup 
 - Disable ipv6
