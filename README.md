@@ -1,4 +1,4 @@
-# Wordpress Security
+# Wordpress Security Hosting
 
 wp_secure_nossl.sh - Automatic secure wordpress hosting installator 
 
