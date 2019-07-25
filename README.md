@@ -5,6 +5,14 @@ wp_secure_nossl.sh - Automatic secure wordpress hosting installator
 - Only for restriction access by IP
 - Without SSL
 
+Compatible: 
+
+Digital Ocean Droplet, Centos 7 x64
+
+Minimal Droplet Requirements: 
+
+1Gb Memory, 25Gb Disk
+
 Attention: 
 
 Run wp_secure_nossl.sh only on new, clean Droplet
@@ -16,14 +24,6 @@ Actions:
 - System Firewall setup
 - Wordpress download & unpack
 - Nginx secure settings
-
-Compatible: 
-
-Digital Ocean Droplet, Centos 7 x64
-
-Minimal Droplet Requirements: 
-
-1Gb Memory, 25Gb Disk
 
 Detailed Actions:
 
