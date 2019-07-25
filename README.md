@@ -49,3 +49,11 @@ Detailed Actions:
 - Allow :8083 vesta port only for IP
 
 This .sh implements part of wordpress security guide https://outsource-trading.com/blog/new-wordpress-secure-installation/
+
+RUN: 
+
+yum install wget
+wget https://raw.githubusercontent.com/outsource-trading/wordpress_security/master/wp_secure_nossl.sh
+chmod +x wp_secure_nossl.sh
+./wp_secure_nossl.sh
+
