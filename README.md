@@ -26,7 +26,7 @@ Package Included:
 - Nginx configuration files security settings
 - - move domain.nginx.conf to /etc/nginx/conf.d/
 - - remove include vesta nginx confs ( for domain & vesta ) 
-- - restrict to acess server via server IP
+- - restrict web via server IP
 - - restrict vesta /webmail/,/phpmyadmin/ access only from allowed IP + httpd restriction
 - - restrict /wp-admin/ folder and included files via IP
 - Allow SSH only for IP
