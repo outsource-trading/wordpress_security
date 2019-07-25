@@ -22,7 +22,7 @@ Package Included:
 - - Paraphrase setup
 - Vesta Control Panel Setup ( Download latest )
 - PHP 5.6 - > PHP 7.2 Upgrade
-- Wordpress Download & Unpack to domain directory
+- Wordpress Download & Unpack to domain www directory
 - Nginx configuration files security settings
 - - move domain.nginx.conf to /etc/nginx/conf.d/
 - - remove include vesta nginx confs ( for domain & vesta ) 
