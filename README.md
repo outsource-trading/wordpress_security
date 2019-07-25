@@ -13,7 +13,7 @@ Actions:
 
 - SSH setup
 - Vesta Control Panel setup
-- Firewall setup
+- System Firewall setup
 - Wordpress download & unpack
 - Nginx secure settings
 
