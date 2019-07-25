@@ -12,10 +12,10 @@ Run wp_secure_nossl.sh only on new, clean Droplet
 Actions: 
 
 - SSH Setup
-- Vesta Control Panel Setup
-- Firewall Setup
-- Wordpress Download & Unpack
-- Nginx Secure Settings
+- Vesta Control Panel setup
+- Firewall setup
+- Wordpress download & unpack
+- Nginx secure settings
 
 Compatible: 
 
@@ -27,7 +27,7 @@ Minimal Droplet Requirements:
 
 Detailed Actions:
 
-- Swap Setup 
+- Swap setup 
 - Disable ipv6
 - SSH configuration
 - - /etc/ssh/sshd_config сhanges: 
@@ -36,9 +36,9 @@ Detailed Actions:
 - - - PasswordAuthentication no
 - - Private key generation 
 - - Paraphrase setup
-- Vesta Control Panel Setup ( Download latest )
+- Vesta Control Panel setup ( Download latest )
 - PHP 5.6 - > PHP 7.2 Upgrade
-- Wordpress Download & Unpack to domain www directory
+- Wordpress download & unpack to domain www directory
 - Nginx configuration files security settings
 - - move domain.nginx.conf to /etc/nginx/conf.d/
 - - remove include vesta nginx confs ( for domain & vesta ) 
