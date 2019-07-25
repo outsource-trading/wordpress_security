@@ -7,11 +7,9 @@ wp_secure_nossl.sh - Automatic secure wordpress hosting installator
 
 Compatible: 
 
-Digital Ocean Droplet, Centos 7 x64
-
-Minimal Droplet Requirements: 
-
-1Gb Memory, 25Gb Disk
+- Digital Ocean Droplet, Centos 7 x64
+- Minimal Droplet Requirements: 
+- - 1Gb Memory, 25Gb Disk
 
 Attention: 
 
