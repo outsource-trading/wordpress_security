@@ -1,8 +1,4 @@
 #!/bin/bash
-export LANGUAGE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_TYPE=en_US.UTF-8
 
 echo 'LC_CTYPE="en_US.UTF-8"' >> /etc/environment
 
@@ -50,7 +46,7 @@ while ! [[ ${username} =~ ^[A-Za-z0-9\\_]+$ ]]; do
 done
 
 ### USER SETUP
-password=$(pwgen -Bc 10 1)
+password=$(pwgen -Bc 16 1)
 egrep "^$username" /etc/passwd >/dev/null
 if [ $? -eq 0 ]; then
         echo "User $username exists!"
@@ -82,7 +78,7 @@ while [[ ! ${sshpassword} =~ ^[0-9a-zA-Z]+$ ]]; do
 done
 
 while [[ ! ${sshport} =~ ^[0-9]+$ ]]; do
-        read -p "Enter Port number from $sshstartrange to $sshstoprange : " sshport
+        read -p "Enter Port from $sshstartrange to $sshstoprange : " sshport
         ! [[ ${sshport} -ge $sshstartrange && ${sshport} -le $sshstoprange  ]] && unset sshport
 done
 
@@ -108,7 +104,7 @@ echo "SSH PRIVATE KEY (COPY-PASTE):"
 cat $userhome/.ssh/id_rsa
 while [[ ! ${sshinputcheck} =~ ^[yY][eE][sS]$ ]];
 do
-        read -p "Please confirm you have copied the key (type yes):" sshinputcheck
+        read -p "Please confirm you have copied the key (type yes) :" sshinputcheck
 done
 rm $userhome/.ssh/id_rsa
 
@@ -159,20 +155,33 @@ echo $localip
 sed -i "/server_name/a return 444;" /etc/nginx/conf.d/$localip.conf
 
 ### WEBMAIL RESTRICT
+#httpd
 sed -i "s/Allow from all/Allow from $sourceip/" /etc/httpd/conf.d/roundcubemail.conf
+#nginx
+read -r -d '' webmail << EOM
+location  ^~ /webmail/ {
+           proxy_pass http://$localip:8080;
+           allow $sourceip;
+           deny all;
+          }
+EOM
+sed -i "/error_log/r /dev/stdin" <<< $webmail /etc/nginx/conf.d/$domainname.nginx.conf
 
 ### PHPMYADMIN RESTRICT
+#httpd
 sed -i "s/Allow from All/Allow from $sourceip/" /etc/httpd/conf.d/phpMyAdmin.conf
+#nginx
+read -r -d '' phpmyadmin << EOM
+location  ^~ /phpmyadmin/ {
+           proxy_pass http://$localip:8080;
+           allow $sourceip;
+           deny all;
+          }
+EOM
+sed -i "/error_log/r /dev/stdin" <<< $phpmyadmin /etc/nginx/conf.d/$domainname.nginx.conf
 
 ### DIRECT IP/DEFAULT SITE LOCATIONS RESTRICT
 echo "allow $sourceip;deny all;" >> /usr/local/vesta/nginx/conf/fastcgi_params
-
-####### null
-#sed -i "/location \/error\//a allow $sourceip; deny all;" /usr/local/vesta/nginx/conf/nginx.conf
-#sed -i "/location \/rrd\//a allow $sourceip; deny all;" /usr/local/vesta/nginx/conf/nginx.conf
-#sed -i "/location \/backup\//a allow $sourceip; deny all;" /usr/local/vesta/nginx/conf/nginx.conf
-#sed -i "/ssl_session_timeout/a access_log /dev/null; error_log /dev/null; return 444;" /usr/local/vesta/nginx/conf/nginx.conf
-######
 
 ### WP-ADMIN STOP, STATIC CONTENT STOP
 sed -i "/try_files/a  allow $sourceip; deny all;" /etc/nginx/conf.d/$domainname.nginx.conf
@@ -184,7 +193,7 @@ location ~ ^/(wp-admin|wp-login\.php)
             deny all;
         }
 EOM
-sed -i "/location \/ {/r /dev/stdin" <<< "$wpadmin" /etc/nginx/conf.d/$domainname.nginx.conf
+sed -i "/location \/ {/r /dev/stdin" <<< $wpadmin /etc/nginx/conf.d/$domainname.nginx.conf
 
 iptables -I INPUT -p tcp -s 0.0.0.0/0 --dport $sshport -j DROP
 iptables -I INPUT -p tcp -s $sourceip --dport $sshport -j ACCEPT
