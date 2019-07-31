@@ -1,5 +1,7 @@
 # Wordpress Security
 
+Detailed Video Manual: https://www.youtube.com/watch?v=1soJFnUJOXo
+
 wp_secure_nossl.sh - Automatic secure wordpress hosting installator 
 
 - Only for restriction access by IP
@@ -48,8 +50,6 @@ Detailed:
 - Allow :8083 vesta port only for IP
 
 This .sh implements part of wordpress security guide https://outsource-trading.com/blog/new-wordpress-secure-installation/
-
-Detailed Video Manual: https://www.youtube.com/watch?v=1soJFnUJOXo
 
 RUN: 
 
