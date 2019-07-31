@@ -49,6 +49,8 @@ Detailed:
 
 This .sh implements part of wordpress security guide https://outsource-trading.com/blog/new-wordpress-secure-installation/
 
+Detailed Video Manual: https://www.youtube.com/watch?v=1soJFnUJOXo
+
 RUN: 
 
 yum install wget
