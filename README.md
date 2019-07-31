@@ -21,7 +21,7 @@ Outline:
 - Vesta Control Panel setup
 - System Firewall setup
 - Wordpress download & unpack
-- Nginx secure settings
+- Nginx security settings
 
 Detailed:
 
@@ -34,7 +34,7 @@ Detailed:
 - - - PermitRootLogin no
 - - - PasswordAuthentication no
 - - Private key generation 
-- - Paraphrase setup
+- - Passphrase setup
 - Vesta Control Panel setup ( Download latest )
 - PHP 5.6 - > PHP 7.2 Upgrade
 - Wordpress download & unpack to domain www directory
