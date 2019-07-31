@@ -36,7 +36,7 @@ Detailed:
 - - Private key generation 
 - - Passphrase setup
 - Vesta Control Panel setup ( Download latest )
-- PHP 5.6 - > PHP 7.2 Upgrade
+- PHP 5.6 - > PHP 7.2 Update
 - Wordpress download & unpack to domain www directory
 - Nginx configuration files security settings
 - - move domain.nginx.conf to /etc/nginx/conf.d/
